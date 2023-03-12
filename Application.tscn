@@ -1,0 +1,229 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainApplication.cs" type="Script" id=1]
+
+[node name="MainScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1021.0
+margin_bottom = 597.0
+
+[node name="ProjectLocationDialog" type="FileDialog" parent="TextureRect"]
+margin_right = 315.0
+margin_bottom = 130.0
+popup_exclusive = true
+window_title = "Open a Directory"
+resizable = true
+dialog_text = "Project Location Folder"
+mode = 2
+access = 2
+
+[node name="TemplateLocationDialog" type="FileDialog" parent="TextureRect"]
+margin_right = 315.0
+margin_bottom = 130.0
+popup_exclusive = true
+window_title = "Open a File"
+resizable = true
+dialog_text = "Template File"
+mode = 0
+access = 2
+
+[node name="ErrorDialog" type="ConfirmationDialog" parent="TextureRect"]
+margin_left = 160.0
+margin_top = 112.0
+margin_right = 360.0
+margin_bottom = 182.0
+window_title = "Error"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ErroText" type="Label" parent="TextureRect/ErrorDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 34.0
+text = "Sample Error!"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 608.0
+margin_bottom = 250.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
+margin_right = 110.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 110, 0 )
+text = "Project Location:"
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer"]
+margin_left = 114.0
+margin_right = 481.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="PL_Button" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer"]
+margin_left = 485.0
+margin_right = 600.0
+margin_bottom = 24.0
+text = "Project Location"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 28.0
+margin_right = 600.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer2"]
+margin_right = 110.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 110, 0 )
+text = "Template File:"
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer2"]
+margin_left = 114.0
+margin_right = 466.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="TL_Button" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer2"]
+margin_left = 470.0
+margin_right = 600.0
+margin_bottom = 24.0
+text = "Template Location"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 56.0
+margin_right = 600.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer3"]
+margin_right = 110.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 110, 0 )
+text = "Project Name:"
+
+[node name="PN_LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer3"]
+margin_left = 114.0
+margin_right = 600.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 84.0
+margin_right = 600.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer4"]
+margin_right = 110.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 110, 0 )
+text = "Company Name:"
+
+[node name="CN_LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer4"]
+margin_left = 114.0
+margin_right = 600.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 112.0
+margin_right = 600.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer6"]
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+text = "Default Company Text:"
+
+[node name="DCN_LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer6"]
+margin_left = 204.0
+margin_right = 479.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="DCN_CheckButton" type="CheckButton" parent="TextureRect/VBoxContainer/HBoxContainer6"]
+margin_left = 483.0
+margin_right = 600.0
+margin_bottom = 40.0
+hint_tooltip = "Toggle this if you have different Default Company Text in your template."
+text = "Other"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 156.0
+margin_right = 600.0
+margin_bottom = 196.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer7"]
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+text = "Template Project Name Text:"
+
+[node name="TPN_LineEdit" type="LineEdit" parent="TextureRect/VBoxContainer/HBoxContainer7"]
+margin_left = 204.0
+margin_right = 479.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TPN_CheckButton" type="CheckButton" parent="TextureRect/VBoxContainer/HBoxContainer7"]
+margin_left = 483.0
+margin_right = 600.0
+margin_bottom = 40.0
+hint_tooltip = "Toggle this if you have different Project Name Text in your template."
+text = "Other"
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+margin_top = 200.0
+margin_right = 600.0
+margin_bottom = 214.0
+text = "Project Description: (Readme File Content)"
+
+[node name="ReadMeText" type="TextEdit" parent="TextureRect/VBoxContainer"]
+margin_top = 218.0
+margin_right = 600.0
+margin_bottom = 298.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="CreateButton" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 302.0
+margin_right = 600.0
+margin_bottom = 322.0
+text = "Create Project"
+
+[connection signal="dir_selected" from="TextureRect/ProjectLocationDialog" to="." method="_on_ProjectLocationDialog_dir_selected"]
+[connection signal="file_selected" from="TextureRect/TemplateLocationDialog" to="." method="_on_TemplateLocationDialog_file_selected"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/PL_Button" to="." method="_on_PL_Button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer2/TL_Button" to="." method="_on_TL_Button_pressed"]
+[connection signal="text_changed" from="TextureRect/VBoxContainer/HBoxContainer3/PN_LineEdit" to="." method="_on_PN_LineEdit_text_changed"]
+[connection signal="text_changed" from="TextureRect/VBoxContainer/HBoxContainer4/CN_LineEdit" to="." method="_on_CN_LineEdit_text_changed"]
+[connection signal="text_changed" from="TextureRect/VBoxContainer/HBoxContainer6/DCN_LineEdit" to="." method="_on_DCN_LineEdit_text_changed"]
+[connection signal="toggled" from="TextureRect/VBoxContainer/HBoxContainer6/DCN_CheckButton" to="." method="_on_DCN_CheckButton_toggled"]
+[connection signal="text_changed" from="TextureRect/VBoxContainer/HBoxContainer7/TPN_LineEdit" to="." method="_on_TPN_LineEdit_text_changed"]
+[connection signal="toggled" from="TextureRect/VBoxContainer/HBoxContainer7/TPN_CheckButton" to="." method="_on_TPN_CheckButton_toggled"]
+[connection signal="text_changed" from="TextureRect/VBoxContainer/ReadMeText" to="." method="_on_ReadMeText_text_changed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/CreateButton" to="." method="_on_CreateButton_pressed"]
